@@ -9,11 +9,9 @@ public class PauseGame : MonoBehaviour
 {
 
     [SerializeField] private GameObject pausePanel;
-    // Update is called once per frame
     void Update()
     {
 
-        //pause game
         if (!GlobalStats.gameOver && Input.GetKeyDown(KeyCode.P))
         {
             Boolean isPaused = Time.timeScale == 0;

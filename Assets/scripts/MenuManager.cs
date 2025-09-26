@@ -9,9 +9,8 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1;
-        GlobalStats.ElapsedTime = 0;
-        GlobalStats.EnemiesLeft = GlobalStats.TotalEnemies;
         GlobalStats.gameOver = false;
+        GlobalStats.wavesCleared = false;
         SceneManager.LoadScene("Arena");
 
     }

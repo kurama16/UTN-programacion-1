@@ -11,14 +11,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 mousePosition;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -36,13 +34,5 @@ public class PlayerMovement : MonoBehaviour
         float lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90F;
         rb.rotation = lookAngle;
 
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            GlobalStats.gameOver = true;
-        }
     }
 }
